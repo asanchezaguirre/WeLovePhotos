@@ -55,14 +55,14 @@ class Home extends Component {
       return (
       	<div className="container">
 	      	<div className="row">
-	      		<div className="col-8 mx-auto mt-2 mb-2">
+	      		<div className="col-8 mx-auto mt-2 mb-1">
 	      			<label className="pr-3">Search</label>
 	      			<input onChange={this.handleInputChange} type="search" placeholder="Search" aria-label="Search" className="search" />
 	    		</div>
 	      	</div>
 	      	{this.state.filteredData.map(user => (
 	      	<div className="row row_user">
-	      		<div className="card col-8 mt-3 mx-auto">
+	      		<div className="card col-8 mt-1 mx-auto">
 	      			<div class="row no-gutters">
 						<div className="card_home col-md-1">
 						  <img src={`https://api.adorable.io/avatars/${user.name}`} className="card-img mt-2" alt="..."/>
