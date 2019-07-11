@@ -17,7 +17,7 @@ class Home extends Component {
 
     this.setState(prevState => {
       const filteredData = prevState.data.filter(element => {
-        return element.name.toLowerCase().includes(query.toLowerCase());
+        return element.name.toLowerCase().includes(query.toLowerCase()) || element.username.toLowerCase().includes(query.toLowerCase());
       });
 
       return {
@@ -46,8 +46,6 @@ class Home extends Component {
   componentWillMount() {
     this.getData();
   }
-
-
 
 	
 
