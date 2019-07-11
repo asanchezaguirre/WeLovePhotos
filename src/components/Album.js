@@ -56,16 +56,19 @@ class Album extends Component {
   render() {
   	//console.log(this.props.match.params)
   	    return (
-      	<div>
+      	<div className="container">
       		<div>
 	      		<h6>Titulo del album</h6>
 	      		<p>by @{this.state.user.username}</p>
 	      	</div>
-      		{this.state.albumes.map(album => (
-			<div className="card card_albumid">
-			  <img src={`${album.url}`} className="card-img-top" alt="..."/>
-			</div>
- 			))}
+
+	      	<div className="row ml-4">
+	      		{this.state.albumes.map(album => (
+				<div className="card mr-5 ml-5 mt-3 card_albumid">
+				  <img src={`${album.url}`} className="card-img-top" alt="..."/>
+				</div>
+	 			))}
+ 			</div>
 		</div>
         );
   }
