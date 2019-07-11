@@ -8,6 +8,7 @@ class Album extends Component {
 		this.state={
 			albumes:[],
 			user:{},
+		
 		}
 	}
 
@@ -16,6 +17,7 @@ class Album extends Component {
 		const albumId = this.props.match.params.albumId
 		this.showAlbum(userId, albumId)
 		this.showCurrentUser(userId);
+	
 
 	}
 		
@@ -35,6 +37,7 @@ class Album extends Component {
 	      .catch(e => alert(e))
 	}	
 
+	
 
 	showAlbum = (userId, albumId) => {
 		const API_URL = 'http://jsonplaceholder.typicode.com/albums/'
@@ -60,7 +63,7 @@ class Album extends Component {
       		<div className="row">
       			<div className="col-10 mx-auto mt-2 mb-2">
       			    <div className="container_album">
-				      	<h5 className="font-weight-bold">Titulo del album</h5>
+				      	<h5 className="font-weight-bold">Titulo</h5>
 				      	<p>by @{this.state.user.username}</p>
 				    </div>
 				</div>
