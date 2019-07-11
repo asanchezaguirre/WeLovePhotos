@@ -6,27 +6,45 @@ class User extends Component {
 	constructor(props){
 		super(props)
 		this.state={
-			user:[],
+			albumes:[],
+			user:{},
 		}
 		
 	}
 
 	componentDidMount(){
 		const userId = this.props.match.params.userId;
-		this.showUser(userId)
-	}
-		
+		this.showAlbumes(userId);
+		this.showCurrentUser(userId);
 
-	showUser = userId => {
+	}
+	
+	showCurrentUser = userId => {
+		const API_URL = 'http://jsonplaceholder.typicode.com/users/'
+	    fetch(`${API_URL}${this.props.match.params.userId}`, {
+	      method: 'GET',
+	    })
+	      .then(response => response.json())
+	      .then(data => {
+	        //console.log(data)
+	        this.setState({
+	          user: data
+	        })
+
+	      })
+	      .catch(e => alert(e))
+	}	
+
+	showAlbumes = userId => {
 		const API_URL = 'http://jsonplaceholder.typicode.com/albums?userId='
 	    fetch(`${API_URL}${this.props.match.params.userId}`, {
 	      method: 'GET',
 	    })
 	      .then(response => response.json())
 	      .then(data => {
-	        console.log(data)
+	        //console.log(data)
 	        this.setState({
-	          user: data
+	          albumes: data
 	        })
 
 	      })
@@ -35,18 +53,19 @@ class User extends Component {
 
 
   render() {
-  	//console.log(this.props.match.params)
   	    return (
       	<div>
+
+      		<div>
+	      		<img src={`https://api.adorable.io/avatars/${this.state.user.name}`}/>
 	      	<div>
-	      		<img src="{user.}" />
-	      		<div>
-	      			<h6>@{this.props.match.params.userId}</h6>
-	      			<p>{this.props.match.params.user}</p>
+	      			<h6>@{this.state.user.username}</h6>
+	      			<p>{this.state.user.name}</p>
 	      		</div>
 	      	</div>
+	      	
 	      	<h4>Albums</h4>
-	      	{this.state.user.map(album => (
+	      	{this.state.albumes.map(album => (
 			
 				<div className="card">
 				  <img src="{album.}" className="card-img-top" alt="..."/>
