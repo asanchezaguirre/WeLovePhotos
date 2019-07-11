@@ -11,6 +11,7 @@ class Home extends Component {
 		}
 	}
 
+
 	componentDidMount(){
 	 const API_URL = 'http://jsonplaceholder.typicode.com/users'
     fetch(API_URL, {
@@ -27,32 +28,32 @@ class Home extends Component {
       .catch(e => alert(e))
   }
 
+  //Método Search Input
+	showFiltered = (e) => {
+		var query = e.target.value.toLowerCase();
+		var updatedList = this.state.users;
 
-	//Método Search Input
-	  searchByName = (e) => {
-	  	e.preventDefault();
-	    var query = e.target.value.toLowerCase();
-	    //console.log(query)/
+	    var coincidences = updatedList.filter(function(item){
+	      var searchInLowerCase = item.name.toLowerCase();
 
-	    var coincidences = this.state.users.filter(function(shot) {
-	      var nameInLowerCase = shot.name.toLowerCase() || shot.username.toLowerCase();
-	      	console.log(shot)
-	      return nameInLowerCase.includes(query);
+	      return searchInLowerCase.includes(query);
 	    });
-
 	    this.setState({
-	      users: coincidences
+	    	users: coincidences
 	    });
-	    
 	  }
+	    
+	  
 	  //Termina método
+
+	
 
   render() {
       return (
       	<div>
-	      	<form className="form-inline">
-			    <input className="form-control mr-sm-2" onChange={this.searchByName} type="search" placeholder="Search" aria-label="Search" />
-			</form>
+	      	
+			    <input onChange={this.showFiltered} type="search" placeholder="Search" aria-label="Search" />
+		
 			{this.state.users.map(user => (
 			<div className="card card_home">
 			  <img src={`https://api.adorable.io/avatars/${user.name}`} className="card-img-top" alt="..."/>

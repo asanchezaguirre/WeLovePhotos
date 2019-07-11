@@ -67,8 +67,8 @@ class User extends Component {
 	      	<h4>Albums</h4>
 	      	{this.state.albumes.map(album => (
 			
-				<div className="card">
-				  <img src="{album.}" className="card-img-top" alt="..."/>
+				<div className="card card_album">
+				  <img src={`https://picsum.photos/id/${album.id}/200/300?grayscale`} className="card-img-top" alt="..."/>
 				  <div className="card-body">
 				    <p className="card-text">{album.title}</p>
 				    <Link to={`/${album.userId}/${album.id}`} className="btn btn-primary">See more albums</Link>

@@ -62,7 +62,7 @@ class Album extends Component {
 	      		<p>by @{this.state.user.username}</p>
 	      	</div>
       		{this.state.albumes.map(album => (
-			<div className="card card_home">
+			<div className="card card_albumid">
 			  <img src={`${album.url}`} className="card-img-top" alt="..."/>
 			</div>
  			))}
