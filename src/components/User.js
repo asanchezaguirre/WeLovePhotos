@@ -61,8 +61,8 @@ class User extends Component {
 			      		<div className="user_avatar col-md-2">
 				      		<img src={`https://api.adorable.io/avatars/${this.state.user.name}`}/>
 				      	</div> 
-				      	<div className="col-md-10 pt-4">
-			      			<h6>@{this.state.user.username}</h6>
+				      	<div className="col-md-10 pt-4 container_user">
+			      			<h5 className="font-weight-bold">@{this.state.user.username}</h5>
 			      			<p>{this.state.user.name}</p>
 			      		</div>
 			      	</div>
@@ -70,7 +70,7 @@ class User extends Component {
 	      	</div>
 	      	<div className="row">
       			<div className="col-10 mx-auto mt-1 mb-1">
-	      			<h4>Albums</h4>
+	      			<h4 className="font-weight-bold">Albums</h4>
 	      		</div>
 	      	</div>
 	      	<div className="row ml-4">
@@ -81,8 +81,8 @@ class User extends Component {
 				      			<div>
 				      				<Link to={`/${album.userId}/${album.id}`}>
 										<div className=" card mr-5 ml-5 mt-2 card_album">
-											<img src={`https://picsum.photos/id/${album.id}/200/300`} className="card-img-top" alt="..."/>
-											<p >{album.title}</p>
+											<img src={`https://picsum.photos/id/${album.id}/200/300`} className="card-img-top pl-3" alt="..."/>
+											<p className="text-decoration-none text-center album_text">{album.title}</p>
 										</div>
 									</Link>	
 								</div>

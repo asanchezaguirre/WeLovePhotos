@@ -24,3 +24,17 @@
 	width:90px;
   	height: 90px;
 }
+.username_text{
+	font-size:14px;
+	padding-bottom:20px;
+}
+.container_user p{
+	font-size:14px;
+}
+.album_text{
+	font-size:13px;
+	color: black;
+}
+.container_album p{
+	font-size:14px;
+}
