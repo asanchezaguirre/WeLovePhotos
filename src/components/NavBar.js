@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 class NavBar extends Component {
   render() {
       return (
-	    <nav className="navbar navbar-dark bg-dark">
+	    <nav className="navbar nav justify-content-center navbar-dark bg-dark">
 		  <Link to='/' className="navbar-brand">
-		    <div>We love photos</div>
+		    <div className='nav-tex'>We love photos</div>
 		  </Link>
 		</nav>
     );

@@ -54,28 +54,43 @@ class User extends Component {
 
   render() {
   	    return (
-      	<div>
-
-      		<div>
-	      		<img src={`https://api.adorable.io/avatars/${this.state.user.name}`}/>
-	      	<div>
-	      			<h6>@{this.state.user.username}</h6>
-	      			<p>{this.state.user.name}</p>
+      	<div className="container">
+      		<div className="row">
+      			<div className="col-9 mx-auto mt-2 mb-2">
+      				<div class="row no-gutters">
+			      		<div className="user_avatar col-md-2">
+				      		<img src={`https://api.adorable.io/avatars/${this.state.user.name}`}/>
+				      	</div> 
+				      	<div className="col-md-10 pt-4">
+			      			<h6>@{this.state.user.username}</h6>
+			      			<p>{this.state.user.name}</p>
+			      		</div>
+			      	</div>
 	      		</div>
 	      	</div>
-	      	
-	      	<h4>Albums</h4>
-	      	{this.state.albumes.map(album => (
-			
-				<div className="card card_album">
-				  <img src={`https://picsum.photos/id/${album.id}/200/300?grayscale`} className="card-img-top" alt="..."/>
-				  <div className="card-body">
-				    <p className="card-text">{album.title}</p>
-				    <Link to={`/${album.userId}/${album.id}`} className="btn btn-primary">See more albums</Link>
-				  </div>
-				</div>
-		
- 			))}
+	      	<div className="row">
+      			<div className="col-9 mx-auto mt-3 mb-3">
+	      			<h4>Albums</h4>
+	      		</div>
+	      	</div>
+	      	<div className="row">
+		      	
+			      	{this.state.albumes.map(album => (
+			      		
+			      			<div className="col-sm-4">
+				      			<div>
+				      				<Link to={`/${album.userId}/${album.id}`}>
+										<div className="card_album">
+											<img src={`https://picsum.photos/id/${album.id}/200/300`} className="card-img-top" alt="..."/>
+											<p >{album.title}</p>
+										</div>
+									</Link>	
+								</div>
+							</div>
+						
+		 			))}
+		 		
+ 			</div>
 		</div>
         );
   }

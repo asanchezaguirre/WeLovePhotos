@@ -50,19 +50,30 @@ class Home extends Component {
 
   render() {
       return (
-      	<div>
-	      	
-			    <input onChange={this.showFiltered} type="search" placeholder="Search" aria-label="Search" />
-		
-			{this.state.users.map(user => (
-			<div className="card card_home">
-			  <img src={`https://api.adorable.io/avatars/${user.name}`} className="card-img-top" alt="..."/>
-			  <div className="card-body">
-			    <h5 className="card-title">@{user.username}</h5>
-			    <p className="card-text">{user.name}</p>
-			    <Link to={`/users/${user.id}`} className="btn btn-primary">See Albums</Link>
-			  </div>
-			</div>
+      	<div className="container">
+	      	<div className="row">
+	      		<div className="col-8 mx-auto mt-2 mb-2">
+	      			<label className="pr-3">Search</label>
+	      			<input onChange={this.showFiltered} type="search" placeholder="Search" aria-label="Search" className="search" />
+	    		</div>
+	      	</div>
+	      	{this.state.users.map(user => (
+	      	<div className="row row_user">
+	      		<div className="card col-8 mt-3 mx-auto">
+	      			<div class="row no-gutters">
+						<div className="card_home col-md-1">
+						  <img src={`https://api.adorable.io/avatars/${user.name}`} className="card-img mt-2" alt="..."/>
+						</div>  
+						<div className="card-body col-md-9 pl-2">
+						   <h5 className="card-title">@{user.username}</h5>
+						   <p className="card-text">{user.name}</p>
+						</div>
+						<div className="card-body col-md-2">
+						   <Link to={`/users/${user.id}`} className="btn btn-primary">See Albums</Link>
+						</div>
+					</div>
+		    	</div>
+	      	</div>
  			))}
 		</div>
         );
