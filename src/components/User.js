@@ -20,7 +20,7 @@ class User extends Component {
 	}
 	
 	showCurrentUser = userId => {
-		const API_URL = 'http://jsonplaceholder.typicode.com/users/'
+		const API_URL = 'https://jsonplaceholder.typicode.com/users/'
 	    fetch(`${API_URL}${this.props.match.params.userId}`, {
 	      method: 'GET',
 	    })
@@ -36,7 +36,7 @@ class User extends Component {
 	}	
 
 	showAlbumes = userId => {
-		const API_URL = 'http://jsonplaceholder.typicode.com/albums?userId='
+		const API_URL = 'https://jsonplaceholder.typicode.com/albums?userId='
 	    fetch(`${API_URL}${this.props.match.params.userId}`, {
 	      method: 'GET',
 	    })

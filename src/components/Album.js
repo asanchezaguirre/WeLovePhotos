@@ -22,7 +22,7 @@ class Album extends Component {
 	}
 		
 	showCurrentUser = userId => {
-		const API_URL = 'http://jsonplaceholder.typicode.com/users/'
+		const API_URL = 'https://jsonplaceholder.typicode.com/users/'
 	    fetch(`${API_URL}${this.props.match.params.userId}`, {
 	      method: 'GET',
 	    })
@@ -40,7 +40,7 @@ class Album extends Component {
 	
 
 	showAlbum = (userId, albumId) => {
-		const API_URL = 'http://jsonplaceholder.typicode.com/albums/'
+		const API_URL = 'https://jsonplaceholder.typicode.com/albums/'
 	    fetch(`${API_URL}${this.props.match.params.userId}/photos?albumId=${this.props.match.params.albumId}`, {
 	      method: 'GET',
 	    })
