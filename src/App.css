@@ -1,40 +1,32 @@
+/* Home---------------------------------------- */
 .card_home img{
   width:60px;
   height: 60px;
 }
+/* User---------------------------------------- */
 .card_album img{
-	width: 95%;
-	height: 160px;
-}
-.card_albumid img{
-	width:242px;
-	height: 240px;
-}
-.nav-tex {
-	width: 200px;
-}
-
-.search{
-	width: 90%;
-}
-.row_user{
-	max-height: 80px;
+	width: 100%;
+	height: auto;
 }
 .user_avatar img{
-	width:90px;
+	width: 90px;
   	height: 90px;
 }
-.username_text{
-	font-size:14px;
-	padding-bottom:20px;
-}
-.container_user p{
-	font-size:14px;
-}
-.album_text{
-	font-size:13px;
+.card_album p{
 	color: black;
+	font-size: 13px;
+	line-height: normal;
 }
-.container_album p{
-	font-size:14px;
+.card_album{
+	height: 260px;
 }
+ /* Album---------------------------------------- */
+
+
+
+
+
+
+
+
+

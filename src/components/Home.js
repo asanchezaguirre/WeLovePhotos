@@ -53,24 +53,23 @@ class Home extends Component {
   render() {
       return (
       	<div className="container-fluid">
-	      	<div className="form-group row mt-3">
+	      	<div className="form-group row">
 	      		<label className="col-1 col-form-label offset-2">Search</label>
-    			<div class="col-7">
+    			<div className="col-7">
       				<input 
 	      				   onChange={this.handleInputChange} 
 	      				   type="search" 
-	      				   placeholder="Search" 
 	      				   aria-label="Search" 
 	      				   className="form-control" 
 	      			/>
     			</div>
 	      	</div>
-	      	{this.state.filteredData.map(user => (
-	      	<div className="row">
+	      	{this.state.filteredData.map((user, index) => (
+	      	<div className="row" key={index}>
 	      		<div className="card  border-dark col-8 offset-2">
-	      			<div class="row d-flex align-items-center">
+	      			<div className="row align-items-center">
 						<div className="card_home col-1">
-						  <img src={`https://api.adorable.io/avatars/${user.name}`} className="card-img" alt="..."/>
+						  <img src={`https://api.adorable.io/avatars/${user.name}`} className="card-img" alt="User avatar"/>
 						</div>  
 						<div className="col-8">
 						   <h5 className="card-title">@{user.username}</h5>
