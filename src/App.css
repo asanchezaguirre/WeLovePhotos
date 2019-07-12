@@ -10,18 +10,20 @@
 }
 .user_avatar img{
 	width: 90px;
-  	height: 90px;
+  	height: auto;
 }
 .card_album p{
 	color: black;
 	font-size: 13px;
-	line-height: normal;
 }
 .card_album{
-	height: 260px;
+	height: 290px;
 }
  /* Album---------------------------------------- */
-
+.card_albumid img{
+	width: 200px;
+	height: auto;
+}
 
 
 

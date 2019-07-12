@@ -56,7 +56,7 @@ class User extends Component {
   	    return (
       	<div className="container"> 
       		
-      				<div className="row align-items-center mb-2 offset-1">
+      				<div className="row align-items-center mb-2 ">
       			
 
 			      		<div className="user_avatar">
@@ -70,19 +70,19 @@ class User extends Component {
 			</div>
 
 
-	      	<div className="row offset-1">    
+	      	<div className="row ">    
 	      		
 	      			<h4 className="font-weight-bold">Albums</h4>
 	      				
 	      	</div>
-	      	<div className="row offset-1">
+	      	<div className="row ">
 		      	
 			      	{this.state.albumes.map((album, index) => (
 			      		
 			      			<div className="col-3" key={index}>
 				      			<div>
 				      				<Link to={`/${album.userId}/${album.id}`}>
-										<div className="card card_album p-2 mb-2">
+										<div className="card card_album p-2 mb-3">
 											<img src={`https://picsum.photos/id/${album.id}/400`} className="card-img-top" alt="Album de usuario"/>
 										
 											<p className="text-decoration-none text-justify">{album.title}</p>

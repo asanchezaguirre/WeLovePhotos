@@ -46,7 +46,7 @@ class Album extends Component {
 	    })
 	      .then(response => response.json())
 	      .then(data => {
-	        console.log(data)
+	        //console.log(data)
 	        this.setState({
 	          albumes: data
 	        })
@@ -61,19 +61,24 @@ class Album extends Component {
   	    return (
       	<div className="container">
       		<div className="row">
-      			<div className="col-10 mx-auto mt-2 mb-2">
-      			    <div className="container_album">
-				      	<h5 className="font-weight-bold">Titulo</h5>
+      			<div className="col">
+      			 	<h5 className="font-weight-bold">Titulo</h5>
 				      	<p>by @{this.state.user.username}</p>
-				    </div>
+				  
 				</div>
 			</div>
-	      	<div className="row ml-4">
-	      		{this.state.albumes.map(album => (
-				<div className="card mr-5 ml-5 mt-3 card_albumid">
-				  <img src={`${album.url}`} className="card-img-top" alt="..."/>
+	      	<div className="row">
+	      		
+	      		{this.state.albumes.map((album, index) => (
+	      			<div className="col-3" key={index}>
+				      			<div>
+				<div className="card p-2 mb-3 card_albumid align-items-center" >
+				  <img src={`${album.url}`} className="card-img-top" alt="Fotografías de album"/>
+				</div>
+				</div>
 				</div>
 	 			))}
+	 		
  			</div>
 		</div>
         );
