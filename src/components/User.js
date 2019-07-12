@@ -56,7 +56,7 @@ class User extends Component {
   	    return (
       	<div className="container"> 
       		
-      				<div className="row align-items-center mb-2 ">
+      				<div className="row align-items-center mb-2">
       			
 
 			      		<div className="user_avatar">
@@ -70,12 +70,12 @@ class User extends Component {
 			</div>
 
 
-	      	<div className="row ">    
+	      	<div className="row">    
 	      		
 	      			<h4 className="font-weight-bold">Albums</h4>
 	      				
 	      	</div>
-	      	<div className="row ">
+	      	<div className="row">
 		      	
 			      	{this.state.albumes.map((album, index) => (
 			      		
